@@ -1,0 +1,303 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mitr', sans-serif;
+
+}
+/* الستايل الخاص بالجسم */
+body{
+    background-color: rgb(5, 5, 41);
+    color: white;
+   
+}
+/* تعديلات الناف بار */
+.header{
+    background-color: transparent;
+    position:fixed;
+    color: white;
+    padding: 50px 12%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+/* تعديلات الشعار */
+.logo{
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    pointer-events: none;
+    text-decoration: none;
+    /* animaiton */
+    opacity: 0;
+    animation: logo 1s ease forwards;
+}
+
+.navbar a{
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 20px;
+     /* animaiton */
+     opacity: 0;
+     animation: logo .5s ease forwards;
+     animation-delay: calc(.2s * var(--i));
+     display: inline-block;
+}
+.navbar a.active{
+    background: linear-gradient(50deg, rgb(0, 255, 21) 50%, rgb(255, 179, 0));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip:text;
+}
+.navbar a:hover{
+    background: linear-gradient(135deg, orange 60%, cyan);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip:text ;
+}
+
+/* main */
+.main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 40px 12%;
+    /* اضافة مسافة للصورة  */
+    justify-content: space-between;
+    
+}
+/* العناوين */
+.home{
+    max-width: 600px;
+}
+
+.home h1{
+    letter-spacing: 1px;
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1.3;
+     /* animaiton */
+     opacity: 0;
+     animation: sliderh1 1s ease forwards;
+     animation-delay: .7s;
+}
+.home h3{
+    font-size: 35px;
+    font-weight: 700;
+     /* animaiton */
+    opacity: 0;
+    animation: sliderh3 1s ease forwards;
+    animation-delay: .7s;
+    
+}
+.home p{
+    font-size: 19px;
+    margin: 40px 0 20px;
+    /* animaiton */
+    opacity: 0;
+    animation: sliderh3 1s ease forwards;
+    animation-delay: .9s;
+}
+/* تعديلات الزر */
+.btn{
+    background-color: green;
+    width: 180px;
+    font-size: 25px;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: white;
+    display: flex;
+    justify-content: center;  
+    transition:0.7s;
+     /* animaiton */
+     opacity: 0;
+     animation: logo 1s ease forwards;
+     animation-delay: 0.9s;
+   
+}
+
+.btn:hover{
+    background: linear-gradient(50deg, rgb(0, 255, 21) 50%, rgb(255, 179, 0));
+    color:rgb(0, 0, 0);
+}
+
+.main-icon a{
+    display: flex;
+    color: white;
+    width: 45px;
+    height: 45px;
+    background:linear-gradient(50deg, rgb(237, 46, 167) 50%, rgb(13, 191, 0));
+    border-radius: 50%;
+    font-size: 25px;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 10px;
+    position: relative;
+    z-index: 1;
+}
+.main-icon a::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: black;
+    border-radius: 50%;
+    transform: scale(.80);
+    z-index: -1;
+    transition: 0.7s;
+}
+.main-icon a:hover:after{
+    transform: scale(0);
+}
+
+.main-icon a:nth-child(1){
+     /* animaiton */
+     opacity: 0;
+     animation: icontop 1s ease forwards;
+     animation-delay: 0.9s;
+
+}
+.main-icon a:nth-child(3){
+    /* animaiton */
+    opacity: 0;
+    animation: iconbottom 1s ease forwards;
+    animation-delay: 0.9s;
+
+}
+.main-icon a:nth-child(2){
+    /* animaiton */
+    opacity: 0;
+    animation: icon-normal 1s ease forwards;
+    animation-delay: 0.9s;
+
+}
+.imgs{
+     /* animaiton */
+     opacity: 0;
+     animation: imgs 1s ease forwards,
+      imgs2 4s ease-in-out infinite;
+     animation-delay: 2.1s , 3.3s;
+    
+}
+/* الانيميشنات الخاصة بالموقع */
+
+@keyframes logo {
+   0%{
+
+        opacity: 0;
+        transform: translateY(100px);
+    }
+   100%{
+    opacity: 1;
+    transform: translateY(0);
+
+    }
+    
+}
+
+
+@keyframes sliderh1 {
+    0%{
+ 
+         opacity: 0;
+         transform: translateX(-100px);
+     }
+    100%{
+     opacity: 1;
+     transform: translateX(0);
+ 
+     }
+     
+ }
+ 
+@keyframes sliderh3 {
+    0%{
+ 
+         opacity: 0;
+         transform: translateX(100px);
+     }
+    100%{
+     opacity: 1;
+     transform: translateX(0);
+ 
+     }
+     
+ }
+
+ @keyframes icontop {
+    0%{
+ 
+         opacity: 0;
+         transform: translateY(-100px);
+     }
+    100%{
+     opacity: 1;
+     transform: translateY(0);
+ 
+     }
+     
+ }
+ @keyframes iconbottom {
+    0%{
+ 
+         opacity: 0;
+         transform: translateY(100px);
+     }
+    100%{
+     opacity: 1;
+     transform: translateY(0);
+ 
+     }
+     
+ }
+ @keyframes icon-normal {
+    0%{
+ 
+         opacity: 0;
+         transform: translateX(-100px);
+     }
+    100%{
+     opacity: 1;
+     transform: translateX(0);
+ 
+     }
+     
+ }
+ 
+ 
+@keyframes imgs {
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    
+}
+
+/* لتحريك الصورة  */
+@keyframes imgs2 {
+    0%{
+        transform: translateY(0);
+       
+    }
+    50%{
+        transform: translateY(25px);
+        
+    }
+    100%{
+        transform: translateY(0);
+       
+    }
+    
+}
